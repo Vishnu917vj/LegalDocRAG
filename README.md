@@ -21,7 +21,7 @@ The system ingests documents, stores vector embeddings in Pinecone, retrieves re
 
 ```bash
 git clone https://github.com/Vishnu917vj/LegalDocRAG
-cd GenAiTakehome
+cd LegalDocRAG
 ```
 
 ### 2. Install Dependencies
