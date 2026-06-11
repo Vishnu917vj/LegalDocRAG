@@ -1,0 +1,97 @@
+[
+  {
+    "question": "What time is the hearing for Arvind Mehta v. Northfield Logistics?",
+    "expected_answer": "11:00 a.m.",
+    "expected_source": "03_hearing_notice_template.md"
+  },
+  {
+    "question": "How many days before the listed date must written arguments be filed?",
+    "expected_answer": "seven clear days",
+    "expected_source": "03_hearing_notice_template.md"
+  },
+  {
+    "question": "Who is the CEO of Northfield Logistics?",
+    "expected_answer": null,
+    "expected_source": null
+  },
+  {
+    "question": "Which court is hearing Arvind Mehta v. Northfield Logistics Pvt. Ltd.?",
+    "expected_answer": "District Court, Riverside Bench",
+    "expected_source": "01_matter_memo_arvind_v_northfield.md"
+  },
+  {
+    "question": "What stage is the case currently in?",
+    "expected_answer": "Evidence",
+    "expected_source": "01_matter_memo_arvind_v_northfield.md"
+  },
+  {
+    "question": "When was the written contract signed?",
+    "expected_answer": "12 January 2024",
+    "expected_source": "01_matter_memo_arvind_v_northfield.md"
+  },
+  {
+    "question": "When was the last invoice disputed?",
+    "expected_answer": "18 June 2024",
+    "expected_source": "01_matter_memo_arvind_v_northfield.md"
+  },
+  {
+    "question": "When is the next hearing scheduled?",
+    "expected_answer": "15 August 2025",
+    "expected_source": "01_matter_memo_arvind_v_northfield.md"
+  },
+  {
+    "question": "Who is the employee named in the agreement?",
+    "expected_answer": "Priya Nambiar",
+    "expected_source": "02_employment_agreement_excerpt.md"
+  },
+  {
+    "question": "What is the required notice period to terminate the agreement?",
+    "expected_answer": "60 days written notice",
+    "expected_source": "02_employment_agreement_excerpt.md"
+  },
+  {
+    "question": "What items must the employee hand over during the notice period?",
+    "expected_answer": "Laptops, badges, and source code access",
+    "expected_source": "02_employment_agreement_excerpt.md"
+  },
+  {
+    "question": "How long does the non-compete restriction last after leaving the company?",
+    "expected_answer": "12 months",
+    "expected_source": "02_employment_agreement_excerpt.md"
+  },
+  {
+    "question": "Under what condition may a former employee not work for a direct competitor?",
+    "expected_answer": "If the new role uses the same client list supplied by Bluecrest and is in the same city where Bluecrest has an office",
+    "expected_source": "02_employment_agreement_excerpt.md"
+  },
+  {
+    "question": "What types of information are considered confidential under the agreement?",
+    "expected_answer": "Pricing sheets, unreleased product roadmaps, and customer names marked confidential in writing",
+    "expected_source": "02_employment_agreement_excerpt.md"
+  },
+  {
+    "question": "When is mandatory mediation required before trial under the Riverside Commercial Courts Act?",
+    "expected_answer": "A commercial suit above five lakh fictional rupees must go to mandatory mediation for 30 days.",
+    "expected_source": "04_statute_style_excerpt_fictional.md"
+  },
+  {
+    "question": "How long must mandatory mediation last before trial?",
+    "expected_answer": "30 days",
+    "expected_source": "04_statute_style_excerpt_fictional.md"
+  },
+  {
+    "question": "Can parties avoid mandatory mediation under the Riverside Commercial Courts Act?",
+    "expected_answer": "Yes, if both parties waive it in writing.",
+    "expected_source": "04_statute_style_excerpt_fictional.md"
+  },
+  {
+    "question": "What interest rate may be awarded on delayed payments when a contract specifies no rate?",
+    "expected_answer": "Simple interest at 9% per year.",
+    "expected_source": "04_statute_style_excerpt_fictional.md"
+  },
+  {
+    "question": "From what date may interest on admitted dues be awarded?",
+    "expected_answer": "From the date of demand until payment.",
+    "expected_source": "04_statute_style_excerpt_fictional.md"
+  }
+]
