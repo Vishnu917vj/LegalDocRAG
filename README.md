@@ -100,7 +100,8 @@ Open the interactive Swagger UI at:
   "citations": [
     {
       "source": "01_matter_memo_arvind_v_northfield.md",
-      "chunk_id": "01_matter_memo_arvind_v_northfield.md_chunk_0"
+      "chunk_id": "01_matter_memo_arvind_v_northfield.md_chunk_0",
+      "text": "The written contract was signed on 12 January 2024."
     }
   ]
 }
