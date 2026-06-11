@@ -135,5 +135,3 @@ class GraphState(TypedDict):
     citations: List[Dict[str, str]]
     retry_count: int
 ```
-
-The graph state is shared across all nodes and updated incrementally as the workflow executes.
