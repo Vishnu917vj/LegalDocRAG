@@ -73,7 +73,7 @@ The ingestion pipeline will:
 
 ### Re-Ingestion Safety
 
-This project uses **deterministic chunk IDs** (e.g., `01_matter_memo_arvind_v_northfield.md_chunk_0`). Running the ingestion script multiple times is safe — Pinecone will simply upsert (update) existing vectors without creating duplicates.
+This project uses **deterministic chunk IDs** (e.g., `01_matter_memo_arvind_v_northfield.md_chunk_0`). Running the ingestion script multiple times is safe Pinecone will simply upsert (update) existing vectors without creating duplicates.
 
 ## Running the API
 
