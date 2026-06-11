@@ -127,7 +127,6 @@ It includes:
 - Out-of-corpus (adversarial) questions
 
 This enables thorough testing of retrieval quality, grounding, citation accuracy, and hallucination prevention.
-```
 
 ## Design Decisions and Justifications
 
