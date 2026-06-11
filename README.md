@@ -20,7 +20,7 @@ The system ingests documents, stores vector embeddings in Pinecone, retrieves re
 ### 1. Clone the Repository
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Vishnu917vj/LegalDocRAG
 cd GenAiTakehome
 ```
 
