@@ -2,7 +2,7 @@
 
 ## LangGraph Workflow
 
-The application uses **LangGraph** to orchestrate the entire RAG pipeline — from retrieval to relevance evaluation and final answer generation. This graph-based approach provides clear control flow, easy debugging, and explicit branching between the "good path" (relevant context found) and "bad path" (insufficient context).
+The application uses **LangGraph** to orchestrate the entire RAG pipeline from retrieval to relevance evaluation and final answer generation. This graph-based approach provides clear control flow, easy debugging, and explicit branching between the "good path" (relevant context found) and "bad path" (insufficient context).
 
 ### Graph Diagram
 
