@@ -363,3 +363,25 @@ I could not find the answer in the provided documents.
 ```
 
 This prevents infinite loops while demonstrating conditional branching within the LangGraph workflow.
+
+## Testing
+
+Individual components of the system can be tested using the scripts available in the `scripts/` directory.
+
+All test files follow the naming convention:
+
+```text
+test_*.py
+```
+
+Examples:
+
+```bash
+python -m scripts.test_embeddings
+python -m scripts.test_pinecone
+python -m scripts.test_retrieval
+python -m scripts.test_chunking
+python -m scripts.test_relevance
+```
+
+These scripts were used during development to verify embeddings, Pinecone connectivity, document chunking, retrieval quality, and relevance evaluation before integrating the complete LangGraph workflow.
