@@ -1,5 +1,4 @@
-```markdown
-# Gen AI Intern Take-Home Assignment
+```markdownt
 
 ## Overview
 
