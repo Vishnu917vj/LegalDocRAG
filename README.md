@@ -385,6 +385,14 @@ I could not find the answer in the provided documents.
 
 This prevents infinite loops while demonstrating conditional branching within the LangGraph workflow.
 
+### Evaluation Note
+
+The assignment mentions providing sample test cases along with evaluation results. I created a custom evaluation dataset based on the provided fictional legal corpus and used it to manually verify retrieval, relevance checking, citation generation, and answer quality during development.
+
+This project intentionally uses free-tier services and open-source models (Google Gemini Flash and BAAI/bge-small-en-v1.5 embeddings). Due to free-tier API limits and resource constraints, I was unable to run large-scale automated evaluation experiments or repeatedly execute the full evaluation suite.
+
+I hope this limitation is understandable. The provided test cases, ingestion pipeline, retrieval workflow, and API examples should still allow the system's functionality to be reproduced and verified locally.
+
 ## Testing
 
 Individual components of the system can be tested using the scripts available in the `scripts/` directory.
