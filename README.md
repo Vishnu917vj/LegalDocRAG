@@ -261,32 +261,42 @@ YES ─────────► no_answer
                  END
 ```
 
-### How It Works
+### Retry Mechanism
 
-If the retrieved chunks are deemed insufficient by the relevance evaluation step, the graph does not immediately return a failure response.
+To improve retrieval reliability, the workflow does not immediately return a failure response when the first retrieval attempt is not relevant.
 
 Instead, it:
 
 1. Increments a retry counter.
-2. Attempts retrieval again.
-3. Re-runs the relevance evaluation.
-4. Continues until either:
-   - Relevant context is found, or
-   - The maximum retry limit is reached.
+2. Expands the retrieval search space (`top_k`).
+3. Slightly relaxes the similarity threshold.
+4. Re-runs retrieval and relevance evaluation.
 
-### Maximum Retry Limit
+This process continues until:
 
-A configurable retry limit prevents infinite execution loops.
+- Relevant context is found, or
+- The maximum retry limit is reached.
+
+### Configuration
 
 ```python
 MAX_RETRIES = 2
+
+BASE_TOP_K = 2
+BASE_MIN_SCORE = 0.60
 ```
 
-When the retry count reaches the configured limit, the workflow routes to the `no_answer` node.
+Example retrieval behavior:
+
+```text
+Attempt 1 → top_k=2, min_score=0.60
+Attempt 2 → top_k=4, min_score=0.50
+Attempt 3 → top_k=6, min_score=0.50
+```
 
 ### No Answer Response
 
-If no sufficiently relevant context can be found after all retry attempts, the API returns:
+If no sufficiently relevant context is found after all retry attempts, the workflow routes to the `no_answer` node and returns:
 
 ```text
 I could not find the answer in the provided documents.
@@ -294,13 +304,17 @@ I could not find the answer in the provided documents.
 
 with an empty citations list.
 
+### Notes
+
+The retry count, retrieval depth (`top_k`), and similarity thresholds were chosen after basic experimentation on the provided sample corpus. Since the assignment corpus is relatively small, these settings provided a reasonable balance between retrieval quality, latency, and resource usage.
+
 ### Benefits
 
-- Prevents answer generation from weak or unrelated evidence.
-- Reduces hallucinations.
-- Demonstrates conditional branching and control flow in LangGraph.
-- Ensures the graph cannot enter an infinite loop.
-- Provides a more robust retrieval pipeline than a single retrieval attempt.
+- Reduces the chance of missing relevant information.
+- Improves retrieval coverage on difficult queries.
+- Helps reduce hallucinations by requiring relevant supporting context.
+- Demonstrates conditional routing and retry logic in LangGraph.
+- Prevents infinite loops through a configurable retry limit.
 
 ### Citation Strategy
 
