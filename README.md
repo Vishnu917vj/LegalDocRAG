@@ -294,6 +294,12 @@ Attempt 2 → top_k=4, min_score=0.50
 Attempt 3 → top_k=6, min_score=0.50
 ```
 
+### Design Choice
+
+The retry mechanism does not exclude chunks retrieved in previous attempts. Instead, each retry retrieves a larger candidate set from Pinecone and re-evaluates relevance.
+
+An alternative approach would be to ignore previously retrieved chunks and search only for unseen results. However, since the assignment corpus is relatively small, I chose to keep all retrieved chunks available across retries. This allows the answer generation step to use the largest possible relevant context window rather than discarding potentially useful evidence from earlier retrieval attempts.
+
 ### No Answer Response
 
 If no sufficiently relevant context is found after all retry attempts, the workflow routes to the `no_answer` node and returns:
@@ -306,12 +312,13 @@ with an empty citations list.
 
 ### Notes
 
-The retry count, retrieval depth (`top_k`), and similarity thresholds were chosen after basic experimentation on the provided sample corpus. Since the assignment corpus is relatively small, these settings provided a reasonable balance between retrieval quality, latency, and resource usage.
+The retry count, retrieval depth (`top_k`), and similarity thresholds were chosen after basic experimentation on the provided sample corpus. Since the assignment corpus is small and resource requirements are limited, these settings provided a reasonable balance between retrieval quality, latency, and resource usage.
 
 ### Benefits
 
 - Reduces the chance of missing relevant information.
 - Improves retrieval coverage on difficult queries.
+- Preserves useful context from earlier retrieval attempts.
 - Helps reduce hallucinations by requiring relevant supporting context.
 - Demonstrates conditional routing and retry logic in LangGraph.
 - Prevents infinite loops through a configurable retry limit.
